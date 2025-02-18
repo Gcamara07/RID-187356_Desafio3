@@ -1,0 +1,186 @@
+html{
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: "Rubik", serif;
+}
+
+body{
+    height: 100%;
+    height: 100%;
+    background: #F5F9FF;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 2.5rem;
+
+}
+
+
+#Lista{
+    width: 100%;
+    max-width: 40rem;
+    background-color: #fff;
+    border-radius: .5rem;
+    padding: 2.3rem , 3rem ;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    box-shadow: 5px 5px 5px grey;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#criação-tarefas-section{
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    min-height: 5rem;
+}
+
+#criação-tarefas-form{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+#criação-tarefas-form > input{
+    width: 100%;
+    height: 3rem;
+    padding-left: 1.5rem;
+    font-size: 1.2rem;
+}
+
+#criação-tarefas-form > button{
+    width: 3rem;
+    background-color: #2D70FD;
+    border: none;
+   color: #fff; 
+   border-radius: .3rem;
+   cursor: pointer;
+   font-size: 1.2rem ;
+
+   &:hover{
+    background-color: #588af6;
+   }
+}
+
+
+
+#lista-tarefas{
+    
+    
+     min-height: 6.4rem;
+    border-radius: .5rem;
+    height: 11rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+
+   
+    
+} 
+
+.lista-tarefas-section{
+
+    background-color: #e4e5e7;
+    border-radius: .5rem;
+    border: 25px;
+    
+
+
+   & > ul{ 
+    padding-inline-start: 0;
+    height: 8rem;
+    overflow: auto;
+    }
+
+   & >ul > li{
+    list-style: none;
+    padding: .8rem 1.6rem;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: .5rem;
+
+   }
+
+   & ul> li>  button{
+    width: 6rem;
+    height: 2.8rem;
+    color: white;
+    background-color: #2D70FD;
+    border: none;
+    border-radius: .4rem;
+}
+
+   
+}
+
+footer{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: end;
+
+}
+
+@media (max-width: 768px) {
+
+
+    html{
+        
+        font-size: 16px;
+       
+    }
+
+    h1{
+        font-size: 2rem;
+    
+    }
+
+    #criação-tarefas-form{
+       
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    #criação-tarefas-form > input{
+        width: 38rem;
+        font-size: 1.2rem;
+        
+    }
+
+    #criação-tarefas-form > button{
+        width: 100%;
+        height: 3rem ;
+    
+        background-color: #2D70FD;
+        border: none;
+       color: #fff; 
+       border-radius: .3rem;
+       cursor: pointer;
+       font-size: 1.2rem ;
+    
+       &:hover{
+        background-color: #588af6;
+       }
+    }
+
+    .lista-tarefas-section> ul > li{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+  
