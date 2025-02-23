@@ -13,9 +13,11 @@ const rederizacaodeprogresso = (tarefas) => {
         progressoTarefas = novaBarraProgresso;
     }
 
+
+    const tarefastrue = tarefas.filter(({checked}) => checked ).length ;
     const TotalTarefas = tarefas.length;
 
-    progressoTarefas.textContent = `1/${TotalTarefas} Concluidas`
+    progressoTarefas.textContent = `${tarefastrue}/${TotalTarefas} Concluidas`
 
 }
 
@@ -31,9 +33,19 @@ const setarNoLocalStorage = (tarefas) =>{
 
 const removerTarefa = (tarefaId) => {
     const tarefas = pegartarefasDoLS();
+
+    const mudarTrue = tarefas.map((item) => {
+        
+        return{
+            ...item,
+            checked: !item.checked
+        }
+    })
+
     
-   const updatedTasks = tarefas.filter(({id}) =>parseInt(id) !== parseInt(tarefaId));
-    rederizacaodeprogresso(updatedTasks);
+   
+    const updatedTasks = tarefas.filter(({id}) =>parseInt(id) !== parseInt(tarefaId));
+     rederizacaodeprogresso(tarefas);
     setarNoLocalStorage(updatedTasks);
 
     document
@@ -44,6 +56,7 @@ const removerTarefa = (tarefaId) => {
 
 
 const criacaoIntensLista = (tarefa) => {
+    
 
     const lista = document.getElementById('lista-tarefas');
     const toDo = document.createElement('li');
@@ -61,6 +74,7 @@ const criacaoIntensLista = (tarefa) => {
      
 
     lista.appendChild(toDo);
+    
     
 
     return toDo;
@@ -95,7 +109,7 @@ const creatTask = (event)  => {
         {description :newTaskData.description, id: newTaskData.description, checked:false }
     ]
 
-    rederizacaodeprogresso(tarefas);
+    rederizacaodeprogresso(updatedTasks);
     setarNoLocalStorage(updatedTasks);
 
     document.getElementById('descrição').value =''
