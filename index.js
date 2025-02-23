@@ -14,7 +14,7 @@ const rederizacaodeprogresso = (tarefas) => {
     }
 
 
-    const tarefastrue = tarefas.filter(({checked}) => checked ).length ;
+    const tarefastrue = tarefas.filter(({checked}) => checked).length ;
     const TotalTarefas = tarefas.length;
 
     progressoTarefas.textContent = `${tarefastrue}/${TotalTarefas} Concluidas`
@@ -45,13 +45,14 @@ const removerTarefa = (tarefaId) => {
     
    
     const updatedTasks = tarefas.filter(({id}) =>parseInt(id) !== parseInt(tarefaId));
-     rederizacaodeprogresso(tarefas);
+    
     setarNoLocalStorage(updatedTasks);
 
     document
     .getElementById( 'lista-tarefas')
     .style.textDecoration ='line-through'
     
+    rederizacaodeprogresso(tarefas);
 }
 
 
